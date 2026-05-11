@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dercheor71vqm"]
+
+[ext_resource type="Texture2D" uid="uid://b1sbg08dr12lk" path="res://addons/kenney_prototype_textures/orange/texture_10.png" id="1_3oq7m"]
+[ext_resource type="Texture2D" uid="uid://d3xvk1xekcuxj" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="2_udnlo"]
+[ext_resource type="PackedScene" uid="uid://cyr57bsxmqw1p" path="res://male_base_mesh.glb" id="3_udnlo"]
+[ext_resource type="PackedScene" uid="uid://crpsijovt103u" path="res://level/house_base.tscn" id="4_w12ce"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w12ce"]
+albedo_texture = ExtResource("1_3oq7m")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5gsn"]
+albedo_texture = ExtResource("2_udnlo")
+
+[node name="LevelBlockout" type="CSGCombiner3D" unique_id=260174771]
+material_override = SubResource("StandardMaterial3D_w12ce")
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=940061159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_i5gsn")
+size = Vector3(30, 1, 40)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=826306884]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2, 17)
+material_override = SubResource("StandardMaterial3D_i5gsn")
+size = Vector3(6, 4, 10)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1009848775]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 2, -17)
+material_override = SubResource("StandardMaterial3D_i5gsn")
+size = Vector3(6, 4, 10)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=825140788]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10.5, 6, -5.5)
+material_override = SubResource("StandardMaterial3D_i5gsn")
+size = Vector3(5, 4, 5)
+
+[node name="SizeRef" parent="." unique_id=2010617250 instance=ExtResource("3_udnlo")]
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -6.571012, 1.9999999, 4.9509125)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1427959906]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, 1)
+radius = 0.4
+height = 1.0
+sides = 16
+
+[node name="HouseBase" parent="." unique_id=2012993536 instance=ExtResource("4_w12ce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, 7.5)
+
+[node name="Label3D" type="Label3D" parent="HouseBase" unique_id=906268709]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.4165096, 9, 0)
+pixel_size = 0.01
+text = "Saloon"
+font_size = 128
