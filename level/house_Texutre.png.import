@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhf76k5axyoju"
-path.s3tc="res://.godot/imported/texture_01.png-60e3b3d3143b179c069dbcbff77ff160.s3tc.ctex"
+uid="uid://byu2c38d24lde"
+path.s3tc="res://.godot/imported/house_Texutre.png-da7083a597494e1f9b001c542406c01d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "aa4f27cd266235bf71266b160afa2ed7"
+}
 
 [deps]
 
-source_file="res://addons/kenney_prototype_textures/dark/texture_01.png"
-dest_files=["res://.godot/imported/texture_01.png-60e3b3d3143b179c069dbcbff77ff160.s3tc.ctex"]
+source_file="res://level/house_Texutre.png"
+dest_files=["res://.godot/imported/house_Texutre.png-da7083a597494e1f9b001c542406c01d.s3tc.ctex"]
 
 [params]
 

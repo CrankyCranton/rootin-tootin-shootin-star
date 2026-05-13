@@ -1,0 +1,57 @@
+[gd_resource type="VisualShader" format=3 uid="uid://dcf4mmlcuogdi"]
+
+[ext_resource type="Texture2D" uid="uid://b1sbg08dr12lk" path="res://addons/kenney_prototype_textures/orange/texture_10.png" id="1_4f03p"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_wv4dr"]
+texture = ExtResource("1_4f03p")
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_3kukv"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_w10a7"]
+function = 1
+
+[sub_resource type="VisualShaderNodeIntConstant" id="VisualShaderNodeIntConstant_h71l8"]
+constant = 100
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_4f03p"]
+expanded_output_ports = [0]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_4f03p"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wv4dr"]
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3kukv"]
+width = 101
+height = 101
+noise = SubResource("FastNoiseLite_wv4dr")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_w10a7"]
+expanded_output_ports = [0]
+texture = SubResource("NoiseTexture2D_3kukv")
+
+[sub_resource type="VisualShaderNodeRemap" id="VisualShaderNodeRemap_4f03p"]
+default_input_values = [1, 0.0, 2, 1.0, 3, 0.0, 4, 0.3]
+
+[resource]
+nodes/vertex/2/node = SubResource("VisualShaderNodeInput_4f03p")
+nodes/vertex/2/position = Vector2(-340, 140)
+nodes/vertex/3/node = SubResource("VisualShaderNodeVectorCompose_4f03p")
+nodes/vertex/3/position = Vector2(180, 140)
+nodes/vertex/4/node = SubResource("VisualShaderNodeTexture_w10a7")
+nodes/vertex/4/position = Vector2(-620, 320)
+nodes/vertex/5/node = SubResource("VisualShaderNodeRemap_4f03p")
+nodes/vertex/5/position = Vector2(-200, 420)
+nodes/vertex/connections = PackedInt32Array(2, 1, 3, 0, 2, 3, 3, 2, 3, 0, 0, 0, 4, 2, 5, 0, 5, 0, 3, 1)
+nodes/fragment/0/position = Vector2(380, 240)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_wv4dr")
+nodes/fragment/2/position = Vector2(-20, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeInput_3kukv")
+nodes/fragment/3/position = Vector2(-600, 160)
+nodes/fragment/4/node = SubResource("VisualShaderNodeUVFunc_w10a7")
+nodes/fragment/4/position = Vector2(-280, 140)
+nodes/fragment/5/node = SubResource("VisualShaderNodeIntConstant_h71l8")
+nodes/fragment/5/position = Vector2(-560, 280)
+nodes/fragment/connections = PackedInt32Array(3, 0, 4, 0, 4, 0, 2, 0, 5, 0, 4, 1, 2, 0, 0, 0)

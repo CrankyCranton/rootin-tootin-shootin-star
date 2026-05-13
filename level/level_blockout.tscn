@@ -1,23 +1,29 @@
 [gd_scene format=3 uid="uid://dercheor71vqm"]
 
-[ext_resource type="Texture2D" uid="uid://b1sbg08dr12lk" path="res://addons/kenney_prototype_textures/orange/texture_10.png" id="1_3oq7m"]
 [ext_resource type="Texture2D" uid="uid://d3xvk1xekcuxj" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="2_udnlo"]
 [ext_resource type="PackedScene" uid="uid://cyr57bsxmqw1p" path="res://male_base_mesh.glb" id="3_udnlo"]
+[ext_resource type="PackedScene" uid="uid://dfp7kf5hsh1l0" path="res://level/shack.tscn" id="4_abgkm"]
 [ext_resource type="PackedScene" uid="uid://crpsijovt103u" path="res://level/house_base.tscn" id="4_w12ce"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w12ce"]
-albedo_texture = ExtResource("1_3oq7m")
-uv1_triplanar = true
+[ext_resource type="PackedScene" uid="uid://cl26bub36nctm" path="res://level/ground.blend" id="5_i5gsn"]
+[ext_resource type="Texture2D" uid="uid://b5bv0c1p0g46x" path="res://assets/Harper_Confident.png" id="6_abgkm"]
+[ext_resource type="Shader" uid="uid://dcf4mmlcuogdi" path="res://level/ground.tres" id="6_acrpi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5gsn"]
 albedo_texture = ExtResource("2_udnlo")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_acrpi"]
+render_priority = 0
+shader = ExtResource("6_acrpi")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_acrpi"]
+size = Vector3(1, 0.001, 1)
+
 [node name="LevelBlockout" type="CSGCombiner3D" unique_id=260174771]
-material_override = SubResource("StandardMaterial3D_w12ce")
 use_collision = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=940061159]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 material_override = SubResource("StandardMaterial3D_i5gsn")
 size = Vector3(30, 1, 40)
 
@@ -37,7 +43,8 @@ material_override = SubResource("StandardMaterial3D_i5gsn")
 size = Vector3(5, 4, 5)
 
 [node name="SizeRef" parent="." unique_id=2010617250 instance=ExtResource("3_udnlo")]
-transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -6.571012, 1.9999999, 4.9509125)
+transform = Transform3D(0.9659258, 0, 0.25881904, 0, 1, 0, -0.25881904, 0, 0.9659258, -8.0710125, 1.1999999, -5.5490875)
+visible = false
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1427959906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.5, 1)
@@ -53,3 +60,26 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.41
 pixel_size = 0.01
 text = "Saloon"
 font_size = 128
+
+[node name="Shack" parent="." unique_id=1014524249 instance=ExtResource("4_abgkm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -7)
+
+[node name="ground" parent="." unique_id=443773526 instance=ExtResource("5_i5gsn")]
+
+[node name="Plane" parent="ground" index="0" unique_id=1540052590]
+surface_material_override/0 = SubResource("ShaderMaterial_acrpi")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="ground/Plane" index="0" unique_id=685829123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5e-06, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground/Plane/StaticBody3D" unique_id=778635059]
+shape = SubResource("BoxShape3D_acrpi")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=360034052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.2896302, -6.5)
+pixel_size = 0.0027
+billboard = 2
+alpha_cut = 2
+texture = ExtResource("6_abgkm")
+
+[editable path="ground"]

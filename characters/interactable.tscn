@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ccpdcoxgn3auo"]
+
+[ext_resource type="Script" uid="uid://c0bn6nujgijty" path="res://characters/interactable.gd" id="1_3tmkx"]
+
+[node name="Interactable" type="Area3D" unique_id=1558674200]
+monitoring = false
+script = ExtResource("1_3tmkx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=223759530]
