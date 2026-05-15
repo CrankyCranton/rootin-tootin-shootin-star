@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bovtxif3nmmdd"
-path.s3tc="res://.godot/imported/texture_03.png-eef45c22e5a84c5df22e7f80e41112c6.s3tc.ctex"
+uid="uid://ciyq1gjnxpovg"
+path.s3tc="res://.godot/imported/house_base_shaded_Texture.png-9935a732fe3263cee488238f1a9b8b09.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "7e27d53ec62202fae498aff38a93651a"
+}
 
 [deps]
 
-source_file="res://addons/kenney_prototype_textures/dark/texture_03.png"
-dest_files=["res://.godot/imported/texture_03.png-eef45c22e5a84c5df22e7f80e41112c6.s3tc.ctex"]
+source_file="res://level/house_base_shaded_Texture.png"
+dest_files=["res://.godot/imported/house_base_shaded_Texture.png-9935a732fe3263cee488238f1a9b8b09.s3tc.ctex"]
 
 [params]
 

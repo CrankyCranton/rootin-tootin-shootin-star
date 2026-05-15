@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bovtxif3nmmdd"
-path.s3tc="res://.godot/imported/texture_03.png-eef45c22e5a84c5df22e7f80e41112c6.s3tc.ctex"
+uid="uid://bxpp5i6kjsd7h"
+path.s3tc="res://.godot/imported/Clay_Irritated.png-b979ec2f8d8ad5951e5be4c7bdc7271a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/kenney_prototype_textures/dark/texture_03.png"
-dest_files=["res://.godot/imported/texture_03.png-eef45c22e5a84c5df22e7f80e41112c6.s3tc.ctex"]
+source_file="res://assets/Clay_Irritated.png"
+dest_files=["res://.godot/imported/Clay_Irritated.png-b979ec2f8d8ad5951e5be4c7bdc7271a.s3tc.ctex"]
 
 [params]
 

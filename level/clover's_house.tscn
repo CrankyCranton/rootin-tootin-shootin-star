@@ -1,20 +1,12 @@
 [gd_scene format=3 uid="uid://dfp7kf5hsh1l0"]
 
+[ext_resource type="PackedScene" uid="uid://buev014vgxtqf" path="res://level/door_knob.tscn" id="1_h6v3s"]
+
 [sub_resource type="PrismMesh" id="PrismMesh_acrpi"]
 left_to_right = 1.0
 size = Vector3(0.4, 1.5, 4.5)
 
-[sub_resource type="Curve" id="Curve_acrpi"]
-_data = [Vector2(0, 0), 0.0, 1.4, 0, 0, Vector2(0.13383839, 0.511236), 0.0, 0.0, 0, 0, Vector2(0.26010102, 0.54494387), 0.0, 0.0, 0, 0, Vector2(0.39141414, 0.4662922), 0.0, 0.0, 0, 0, Vector2(0.50757575, 0.16292143), 0.0, 0.0, 0, 0, Vector2(0.7651515, 0.21910119), 0.0, 0.0, 0, 0, Vector2(1, 0.52247196), 0.0, 0.0, 0, 0]
-point_count = 7
-
-[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_abgkm"]
-radius = 0.1
-radial_steps = 16
-section_length = 0.02
-curve = SubResource("Curve_acrpi")
-
-[node name="Shack" type="CSGCombiner3D" unique_id=1014524249]
+[node name="Clover\'sHouse" type="CSGCombiner3D" unique_id=1014524249]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=496084983]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2.75, 0)
@@ -45,6 +37,26 @@ size = Vector3(0.05, 0.1, 1.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47500038, 4, 0.25)
 operation = 2
 size = Vector3(0.05, 1.6, 0.1)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=2035967745]
+transform = Transform3D(1, 0, 0, 0, 0.08715567, 0.9961947, 0, -0.9961947, 0.08715567, 0.5750006, 4.6625, -0.023445517)
+size = Vector3(0.05, 1.65, 0.35)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=492532228]
+transform = Transform3D(1, 0, 0, 0, -0.08715583, 0.99619466, 0, -0.99619466, -0.08715583, 0.5750006, 3.4124997, -0.023445517)
+size = Vector3(0.05, 1.65, 0.35)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1818085820]
+transform = Transform3D(1, 0, 0, 0, 0.49999997, 0.86602557, 0, -0.86602557, 0.49999997, 0.5750006, 4.0624995, -0.023445517)
+size = Vector3(0.05, 1.65, 0.35)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=1057173970]
+transform = Transform3D(1, 0, 0, 0, -0.1736483, 0.98480785, 0, -0.98480785, -0.1736483, 0.6250006, 4.2124996, -0.023445517)
+size = Vector3(0.05, 1.65, 0.35)
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=1892980815]
+transform = Transform3D(1, 0, 0, 0, -0.42261845, 0.9063078, 0, -0.9063078, -0.42261845, 0.6250006, 3.6624997, -0.023445517)
+size = Vector3(0.05, 1.65, 0.35)
 
 [node name="CSGCombiner3D2" type="CSGCombiner3D" parent="." unique_id=1617895109]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5250006, 1.325, 0)
@@ -101,21 +113,36 @@ operation = 2
 size = Vector3(0.15, 0.2, 1.1)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1175087570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8499999, 1.35, 2.1)
-size = Vector3(0.2, 2.3, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8499999, 1.275, 2.1)
+size = Vector3(0.2, 2.45, 0.2)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1773921046]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8499999, 1.35, -2.0999994)
-size = Vector3(0.2, 2.3, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8499999, 1.275, -2.0999994)
+size = Vector3(0.2, 2.45, 0.2)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="." unique_id=1634601302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4499998, 2.775, -2.1999996)
+size = Vector3(0.3, 5.55, 0.3)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="." unique_id=1233103975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4499998, 2.775, 2.2000005)
+size = Vector3(0.3, 5.55, 0.3)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="." unique_id=342963663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500003, 2.775, -2.1999996)
+size = Vector3(0.3, 5.55, 0.3)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="." unique_id=969050415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4500003, 2.775, 2.2000005)
+size = Vector3(0.3, 5.55, 0.3)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=276014146]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.099999994, 0)
-size = Vector3(1.5, 0.2, 4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.024999991, 0)
+size = Vector3(1.5, 0.05, 4.5)
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="." unique_id=244507341]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.25, 2.7, 0)
 mesh = SubResource("PrismMesh_acrpi")
 
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="." unique_id=1712456513]
+[node name="DoorKnob" parent="." unique_id=2053821029 instance=ExtResource("1_h6v3s")]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.5717068, 1.35, -0.4500003)
-mesh = SubResource("TubeTrailMesh_abgkm")
