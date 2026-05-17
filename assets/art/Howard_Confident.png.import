@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxpp5i6kjsd7h"
-path.s3tc="res://.godot/imported/Clay_Irritated.png-b979ec2f8d8ad5951e5be4c7bdc7271a.s3tc.ctex"
+uid="uid://bxw0dgekfiqvd"
+path.s3tc="res://.godot/imported/Howard_Confident.png-da376fa9a427c7cf83ed7393bcdf312d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Clay_Irritated.png"
-dest_files=["res://.godot/imported/Clay_Irritated.png-b979ec2f8d8ad5951e5be4c7bdc7271a.s3tc.ctex"]
+source_file="res://assets/art/Howard_Confident.png"
+dest_files=["res://.godot/imported/Howard_Confident.png-da376fa9a427c7cf83ed7393bcdf312d.s3tc.ctex"]
 
 [params]
 

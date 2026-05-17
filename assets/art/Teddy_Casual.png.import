@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqgbw6hso2hc8"
-path.s3tc="res://.godot/imported/Seb_Impatient.png-d4fae58cdc44696e94f71a432ddde925.s3tc.ctex"
+uid="uid://501jo2apu277"
+path.s3tc="res://.godot/imported/Teddy_Casual.png-f1a1d92c2ca4f2df867c779c7002ec99.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Seb_Impatient.png"
-dest_files=["res://.godot/imported/Seb_Impatient.png-d4fae58cdc44696e94f71a432ddde925.s3tc.ctex"]
+source_file="res://assets/art/Teddy_Casual.png"
+dest_files=["res://.godot/imported/Teddy_Casual.png-f1a1d92c2ca4f2df867c779c7002ec99.s3tc.ctex"]
 
 [params]
 

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://yoy7vkvhswlo"]
+
+[ext_resource type="AudioStream" uid="uid://cpts5rkr6j5qr" path="res://assets/music/Rootin' Tootin' Shootin' Star (Dark Secret).mp3" id="1_lr66j"]
+[ext_resource type="AudioStream" uid="uid://ba4rd6ayq8a70" path="res://assets/music/Rootin' Tootin' Shootin' Star (Main).mp3" id="2_khlsn"]
+[ext_resource type="AudioStream" uid="uid://ylcohaqdnjpr" path="res://assets/music/Rootin' Tootin' Shootin' Star (Nice Day).mp3" id="3_boywh"]
+[ext_resource type="AudioStream" uid="uid://b3n6adktodnhj" path="res://assets/music/Rootin' Tootin' Shootin' Star (Sunshine).mp3" id="4_eh16a"]
+[ext_resource type="AudioStream" uid="uid://dly1ga462rmb2" path="res://assets/music/Rootin' Tootin' Shootin' Star (Secret Jingle).mp3" id="4_gqg2j"]
+[ext_resource type="AudioStream" uid="uid://dq3ahrgmcfuqn" path="res://assets/music/silence.mp3" id="5_boywh"]
+[ext_resource type="Script" uid="uid://dhv7kymlt8htc" path="res://music.gd" id="5_khlsn"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_eh16a"]
+clip_count = 6
+clip_0/name = &"Main"
+clip_0/stream = ExtResource("2_khlsn")
+clip_0/auto_advance = 0
+clip_1/name = &"Dark Secret"
+clip_1/stream = ExtResource("1_lr66j")
+clip_1/auto_advance = 0
+clip_2/name = &"Nice Day"
+clip_2/stream = ExtResource("3_boywh")
+clip_2/auto_advance = 0
+clip_3/name = &"Sunshine"
+clip_3/stream = ExtResource("4_eh16a")
+clip_3/auto_advance = 0
+clip_4/name = &"Secret Jingle"
+clip_4/stream = ExtResource("4_gqg2j")
+clip_4/auto_advance = 2
+clip_5/name = &"Silence"
+clip_5/stream = ExtResource("5_boywh")
+clip_5/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 1.0,
+"fade_mode": 3,
+"from_time": 0,
+"hold_previous": true,
+"to_time": 1
+}
+}
+
+[node name="Music" type="AudioStreamPlayer" unique_id=334673235]
+stream = SubResource("AudioStreamInteractive_eh16a")
+script = ExtResource("5_khlsn")

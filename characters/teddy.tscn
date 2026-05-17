@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b5julik07vjcx"]
+
+[ext_resource type="PackedScene" uid="uid://ccpdcoxgn3auo" path="res://characters/interactable.tscn" id="1_dnps2"]
+[ext_resource type="Texture2D" uid="uid://501jo2apu277" path="res://assets/art/Teddy_Casual.png" id="2_qu3fb"]
+
+[node name="Teddy" unique_id=1558674200 instance=ExtResource("1_dnps2")]
+dialogue_title = "teddy"
+
+[node name="Sprite3D" parent="." index="1" unique_id=1713746385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.365469, 0)
+texture = ExtResource("2_qu3fb")

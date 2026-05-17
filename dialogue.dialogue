@@ -1,11 +1,190 @@
-~ start
-Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- Start again => start
-- End the conversation => END
-Nathan: For more information see the online documentation.
+~ intro
+# Light filters in through a window over a desk (I’ll draw it soon)
+do Music.switch("Sunshine")
+Clay: You’d think at some point I’d stop falling asleep here.
+Clay: Ain’t nothing to do about it...
+# Mail comes in through the slot
+Clay: What's new from the city, then?
+Clay: No photo...
+do Music.switch("Silence")
+Clay: uuuuuggggggghhhhhhhhh........
+do Music.switch("Sunshine")
+Clay: It's... fine...
+Clay: All that's here is that there was a theft at the bank in town...
+# Maybe have something here that explains why we wouldn’t include questions that are directly related to the crime
+Clay: Never can be an easy job, eh? Well. Time to get to it!
+=> END
+
+~ clover
+- How are you?
+     Clover: 
+- Where were you two nights ago? [if DialogueVars.talked_to_howard]
+    Clover: Clay.
+    Clay: Yes...?
+    Clover: Surely you know better than to expect I’ll remember that...
+    Clay: That’s fair.
+-  Do you remember coming across a gold ring? [if DialogueVars.talked_to_seb]
+    Clover: Yes, actually. Why?
+    Clay: I’m investigating a robbery and I was wondering if they would’ve sold it to you.
+    Clover: Well, this was sold to me a while back...
+    Clover: I don’t know that it’d be what your looking for.
+    Clay: ...
+    Clay: Just tell me and I’ll decide that.
+    Clover:It was a very nice ring.
+    Clay: Do you happen to remember who sold it to you?
+    Clover: What is with you today and asking me to remember things...?
+    do Music.switch("Secret Jingle")
+    Clover: As far as I remember, it was strange young man with reddish hair.
+    do Music.switch("Nice Day")
+    Clay: Well... That’s not helpful.
+set DialogueVars.talked_to_clover = true
+=> END
+
+~ howard
+- How are you?
+    Howard: Good, business has been decent recently.
+- Where were you during the break-in?
+    Howard: I was in my room.
+    Howard: I ended my day a couple hours before and was relaxing.
+    Clay: By relaxing, do you happen to mean sleeping?
+    Howard: More or less.
+- What was stolen?
+    Howard: I... [wait=1] don’t know
+    Clay: ...
+    Howard: Please understand. There were several cases broken.
+    Clay: You know how much harder this is going to make this...?
+    Howard: I’m very sorry, but if there’s anything I CAN help with I will.
+- Is there anything else you think I need to know?
+    Howard: Not really...
+    Howard: You could go talk to Seb though...
+    Clay: Why would I do that?
+    Howard: Well, I ju-
+    Clay: Before you say anythin’ else, just know that there’s no way I will ever want to talk to that spoiled egg.
+    do Music.switch("Secret Jingle")
+    Howard: Th-the point is that he works here.
+    do Music.switch("Nice Day")
+    Clay: Seb... [wait=1] has a job?
+    Howard: Yes...?
+    Clay: Well damn, didn’t think Sebby would ever do somethin’ actually useful.
+- How was babysitting? [if DialogueVars.talked_to_apple]
+    Howard: ...
+    Clay: Is there any reason you didn’t tell me this before?
+    Howard: Not really...?
+    Clay: Then why didn’t you tell me?
+    Howard: Joyce doesn’t like it when too much attention is called to it.
+    Clay: I am investigating. A CRIME.
+    Clay: That doesn’t matter.
+set DialogueVars.talked_to_howard = true
+
+=> END
+
+~ joyce
+- How are you?
+    Joyce: Fine.
+    Clay: Anything new?
+    Joyce: Nope.
+    Clay: ...
+    Joyce: I don’t exactly have time for small talk.
+    Clay: Got it.
+- Where were you two nights ago? [if DialogueVars.talked_to_howard]
+    
+ 
+=> END
+
+~ apple
+- How are you?
+   Apple: ...
+    Apple: ...
+    Apple: ...
+    Clay: Are you going to say anything, or...?
+    Apple: ...
+    Clay: Nice talk.
+- Where is your mom?
+    Apple points to the front of the house
+    Clay: Figures...
+- Where were you two nights ago? [if DialogueVars.talked_to_howard]
+    Apple: ...
+    Clay: You are determined not to be helpful, huh?
+    Apple points at the bank
+    Clay: …
+    do Music.switch("Secret Jingle")
+    Clay: Oh.
+    Clay: You were being babysat by Howard again…
+    do Music.switch("Nice Day")
+    Clay: No one tells me anything.
+    set DialogueVars.talked_to_apple = true
+
+=> END
+
+~ seb
+- How are you?
+    Seb: Well, if you MUST ask, I was on my way home from the checking on the railroad progress.
+    Clay: Well, Seb
+    Seb: please stop calling me that
+    Clay: I’m glad that you’re keeping yourself busy.
+- Did you happen to overhear anything while you were working two nights ago? [if DialogueVars.talked_to_howard]
+    Seb: ...
+    Clay: What? Did you not want me to know that you were working?
+    Seb: Is maintaining one’s image and status a crime?
+    Clay: No, but while you definitely need to keep that a secret to avoid jokes...
+    Clay: This is related to a crime, so I need information.
+    Clay: Anyways, don’t lie to me again.
+    Clay: Understood?
+    Seb: yessir
+    Clay: Anyways... Did you overhear anything?
+    Seb: Well, there was a smashing sound and I took a picture.
+    Clay: ...
+    Seb: ...
+    Clay: You took a picture.
+    Seb: Yes...?
+    Clay: And didn’t TELL ME?!?
+    Seb: sorry
+    Clay: It’s fine...
+    Clay: Just show me the picture.
+    Seb: Here it is.
+    Clay: ...
+    Seb: ...
+    Clay: What is this?
+    Seb: I know what it looks like...
+    Clay: How did you manage to get this blurry of a photo?
+    Clay: It looks like an explosion just happened.
+    Seb: I tripped, okay!? I couldn’t better than that.
+    Clay: ...
+    do Music.switch("Secret Jingle")
+    Clay: Wait.
+    Clay: There’s a gold ring in their hand.
+    do Music.switch("Nice Day")
+    Seb: What?
+    Clay: Well. It seems you were actually helpful.
+    set DialogueVars.talked_to_seb = true
+=> END
+
+~ teddy
+- How are you?
+    Teddy: I am doing wonderful little man.
+    Clay: …
+    Teddy: What?
+    Teddy: Did I say something wrong?
+    Clay: You realize you’re just about the only person in this town that could call ME little, right?
+    Teddy: Yes, but I feel I should exercise that right.
+    Clay: Fine…
+- Where were you two nights ago? [if DialogueVars.talked_to_howard] 
+    Teddy: 
+
+=> END
+
+~ harper
+- How are you? 
+    Harper: Tired.
+    Clay: More than usual, or just in general?
+    Harper: Yep.
+    Clay: That didn’t answer the question.
+    Harper: I know.
+    Clay: ...
+    Harper: ...
+    Clay: So...
+    Harper: Go away.
+    Clay: Got it.
+- Where were you two nights ago? [if DialogueVars.talked_to_howard] 
+
 => END

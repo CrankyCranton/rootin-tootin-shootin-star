@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b01mes31u8fvj"
-path="res://.godot/imported/Apple_Blank_Stare.png-f1ee28708f8f648a853d8d27af3d6f90.ctex"
+uid="uid://bufxluqq1byhm"
+path="res://.godot/imported/Barrel.png-1319d6b78a55a1493e0c73d1bf0c389d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Apple_Blank_Stare.png"
-dest_files=["res://.godot/imported/Apple_Blank_Stare.png-f1ee28708f8f648a853d8d27af3d6f90.ctex"]
+source_file="res://assets/art/Barrel.png"
+dest_files=["res://.godot/imported/Barrel.png-1319d6b78a55a1493e0c73d1bf0c389d.ctex"]
 
 [params]
 

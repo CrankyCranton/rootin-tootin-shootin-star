@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ddx01sovjx5ai"]
+
+[ext_resource type="PackedScene" uid="uid://ccpdcoxgn3auo" path="res://characters/interactable.tscn" id="1_qm666"]
+[ext_resource type="Texture2D" uid="uid://crmak7gt3lsgn" path="res://assets/art/Clover_Casual.png" id="2_oeihc"]
+
+[node name="Clover" unique_id=1558674200 instance=ExtResource("1_qm666")]
+dialogue_title = "clover"
+
+[node name="Sprite3D" parent="." index="1" unique_id=1713746385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3237711, 0)
+texture = ExtResource("2_oeihc")

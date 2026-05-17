@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b74w070msicpn"]
+
+[ext_resource type="PackedScene" uid="uid://ccpdcoxgn3auo" path="res://characters/interactable.tscn" id="1_xddy1"]
+[ext_resource type="Texture2D" uid="uid://b01mes31u8fvj" path="res://assets/art/Apple_Blank_Stare.png" id="2_6v7dr"]
+
+[node name="Apple" unique_id=1558674200 instance=ExtResource("1_xddy1")]
+dialogue_title = "apple"
+
+[node name="Sprite3D" parent="." index="1" unique_id=1713746385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2725992, 0)
+texture = ExtResource("2_6v7dr")

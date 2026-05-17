@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://nyh8cur4h7qf"]
+
+[ext_resource type="PackedScene" uid="uid://ccpdcoxgn3auo" path="res://characters/interactable.tscn" id="1_aa4lm"]
+[ext_resource type="Texture2D" uid="uid://bxw0dgekfiqvd" path="res://assets/art/Howard_Confident.png" id="2_v5ihd"]
+
+[node name="Howard" unique_id=1558674200 instance=ExtResource("1_aa4lm")]
+dialogue_title = "howard"
+
+[node name="Sprite3D" parent="." index="1" unique_id=1713746385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3469563, 0)
+texture = ExtResource("2_v5ihd")

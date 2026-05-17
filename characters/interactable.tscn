@@ -2,8 +2,19 @@
 
 [ext_resource type="Script" uid="uid://c0bn6nujgijty" path="res://characters/interactable.gd" id="1_3tmkx"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3tmkx"]
+height = 2.3000002
+
 [node name="Interactable" type="Area3D" unique_id=1558674200]
 monitoring = false
 script = ExtResource("1_3tmkx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=223759530]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1500001, 0)
+shape = SubResource("CylinderShape3D_3tmkx")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1713746385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
+pixel_size = 0.003
+billboard = 2
+alpha_cut = 2
