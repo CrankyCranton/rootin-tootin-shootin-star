@@ -102,23 +102,41 @@ do Music.switch("Nice Day")
     Howard: Joyce doesn’t like it when too much attention is called to it.
     Clay: I am investigating. A CRIME.
     Clay: That doesn’t matter.
+    Howard: She’s just busy is all.
+    Howard: I watch her when she has too much on her plate to make dinner.
+    Howard: It’s not exactly responsible to leave a child without food.
+    Clay: Fine. Fine.
+    set DialogueVars.talked_to_howard3 = true 
     => howard
 - Was it a gold ring? [if DialogueVars.talked_to_seb]
     Howard: YES! That’s what it was!
     Clay: Do you remember anything about it?
-    Howard: I remember it was sold to me a while back by Ryan.
-    Clay: ...
-    Howard: *****Insert disparaging comment about Ryan here*****[next=auto]
-    Clay: Maybe you couldn’t tell by my silence, but I don’t know him.
-    Howard: ...
-    Clay: Well?
-    do Music.switch("Secret Jingle")
-    Howard: I would’ve thought you’d know him. That’s more Joyce’s story to tell, though.
-    do Music.switch("Nice Day")
-    Clay: I guess I have to ask her?
-    Howard: That’d be my suggestion.  
-    set DialogueVars.talked_to_howard3 = true 
+    Howard: I remember it was sold to me a while back by Clover.
+    Clay: Another step on the fetch quest...
+    set DialogueVars.talked_to_howard4 = true
     => howard
+- Do you know where Clover got it from? [if DialogueVars.talked_to_howard4]
+    if DialogueVars.talked_to_clover == true
+        Howard: No?
+        Clay: Clover says it was Ryan?
+        Howard: Oh.[wait=0.5] Joyce’s ex-husband.[wait=0.5] Strange fella.
+        Clay: ...
+        Howard: I never did like the guy, but he wa-[next=auto]
+        Clay: Maybe you couldn’t tell by my silence, but I don’t know him.
+        Howard: ...
+        Clay: Well?
+        do Music.switch("Secret Jingle")
+        Howard: I would’ve thought you knew him. That’s more Joyce’s story to tell, though.
+        do Music.switch("Nice Day")
+        Clay: I guess I have to ask her?
+        Howard: That’d be my suggestion.  
+        set DialogueVars.talked_to_howard5 = true 
+        => howard
+    else
+        Howard: No?
+        Clay: Okay then...
+        Clay: I guess I’ll ask him.
+        => howard
 - Never mind.
 => END
 
@@ -133,9 +151,11 @@ do Music.switch("Nice Day")
     => joyce
 - Where were you two nights ago? [if DialogueVars.talked_to_howard1]
     Joyce: I was at home making dinner for myself and Apple.
-    Clay: 
+    Clay: That’s nice!
+    Joyce: I try to make good use of ingredients.
+    set DialogueVars.talked_to_joyce1 == true
     => joyce
-- Who was Ryan? [if DialogueVars.talked_to_howard3]
+- Who was Ryan? [if DialogueVars.talked_to_howard5]
     Joyce: First of all...
     Joyce: How did you hear that name?
     Clay: Howard let it slip.
@@ -146,9 +166,53 @@ do Music.switch("Nice Day")
     Joyce: I know you left for a while, so you weren’t here when he was.
     Joyce: Honestly, I really wish you had been there.
     Joyce: I needed the help.
-    Joyce: But I’m here now.
+    Joyce: But I’m here now and he isn’t.
     Clay: ...
+    set DialogueVars.talked_to_joyce2 = true
     => joyce
+- Are you sure? [if DialogueVars.talked_to_howard3 and DialogueVars.talked_to_joyce1 and DialogueVars.talked_to_joyce2]
+    Joyce: What do you mean?
+    Clay: Wasn’t Apple at Howard’s?
+    Joyce: Yeah, she go-[next=auto]
+    Clay: You said you were making dinner for you and Apple.
+    Clay: According to Howard, you are usually too busy to make dinner when he watches her.
+    Joyce: That, wasn’t the case thi-[next=auto]
+    Clay: What was the reason then?
+    Clay: Why did you not want her around?
+    Joyce: CAN YOU JUST LET ME SPEAK?!?
+    Clay: ...
+    Clay: Sorry.[wait=0.5] I got caught up in the moment. 
+    Clay: I don’t get to do this often.
+    Joyce: It’s fine.[wait=0.5] I get it.
+    Clay: The point is...
+    Clay: Where’s the ring?
+    Joyce: What...[wait=1.0] ring...?
+    Clay: The ring that Ryan sold.
+    Clay: I don’t know why he sold it...[wait=0.5] and I don’t need to...
+    Clay: But when you lie to me, don’t have an alibi, and are connected to the seller...
+    Clay: I have to put you as the prime suspect.
+    Joyce: I didn’t do anything.
+    Clay: Please understand.[wait=0.5] I have more than enough reason to search your property.
+    Joyce: ...
+    Joyce: I’ll at least save you the effort.
+    Joyce: Come with me and get it.
+    Joyce: Just...[wait=1.5] Keep track of Apple for me?
+    Clay: Woah woah woah. You’re getting ahead of yourself here.
+    Joyce: ...
+    Joyce: What?
+    Clay: This is a small town.[wait=0.5] Outside of most jurisdictions.
+    Clay: I’m just going to detain you for a bit while I figure out how you need to compensate Howard.
+    Joyce: ...
+    Joyce: Huh.
+    Joyce: Any way I can keep the ring?
+    Clay: By paying for it like a normal person!
+    Clay: Or talk with Howard if you can’t.
+    Clay: I’m sure he’d be willing to strike a deal.
+    Joyce: Fair enough...
+    Joyce: ...
+    Joyce: I really did go through all that effort for nothing.
+    Clay: Yup.
+    do DialogueVars.end_game("Ending Title", "Ending 1/1", Color.GRAY)
 - Never mind.
 => END
 
@@ -273,13 +337,15 @@ do Music.switch("Nice Day")
     Clay: I’m just curious.
     Harper: Well, fix that.
     Clay: Look... I need to know this.
-    Harper: What? Are you going to ***Something***?
+    Harper: What? Are you going to lecture me?
+    Harper: Trying to coach my sleep again?
     Clay: I am just trying to verify where you were a couple nights ago. 
     Clay: As long as you have an alibi, I can cross you off the investigation.
     Harper: ...
     Harper: What investigation?
     Clay: Dang...
     Clay: There was a theft at the bank.
+    Harper: ...
     Harper: I was at the range for a bit two nights ago.
     Harper: I’ve been testing out some ideas for cartridge primers.
     Harper: I think I’m on the verge of making something replicable.
