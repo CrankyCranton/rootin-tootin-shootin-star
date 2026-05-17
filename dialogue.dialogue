@@ -1,11 +1,13 @@
 ~ intro
-# Light filters in through a window over a desk (I’ll draw it soon)
-do Music.switch("Sunshine")
+do DialogueVars.set_frame(0)
+# do Music.switch("Sunshine") Commented it out because the default track is already sunshine
 Clay: You’d think at some point I’d stop falling asleep here.
 Clay: Ain’t nothing to do about it...
-# Mail comes in through the slot
+do DialogueVars.set_frame(1)
 Clay: What's new from the city, then?
+do DialogueVars.set_frame(3)
 Clay: No photo...
+do DialogueVars.set_frame(4)
 do Music.switch("Silence")
 Clay: uuuuuggggggghhhhhhhhh........
 do Music.switch("Sunshine")
@@ -26,7 +28,11 @@ do Music.switch("Nice Day")
     Clover: ...
     # Using => to manually return to the top of the dialogue is messy because of how redundant it is, but it’ll work.  
     => clover
-- Where were you two nights ago? [if DialogueVars.talked_to_howard1]
+- What are you up to?
+    Clover: Same as always.[wait=0.25] Want to buy something?
+    Clay: Same as always.[wait=0.25] Not interested.
+    => clover
+- Where were you three nights ago? [if DialogueVars.talked_to_howard1]
     Clover: Clay.
     Clay: Yes...?
     Clover: Surely you know better than to expect I’ll remember that...
@@ -45,7 +51,8 @@ do Music.switch("Nice Day")
     Clover: What is with you today and asking me to remember things...?
     do Music.switch("Secret Jingle")
     Clover: As far as I remember, it was strange young man with reddish hair.
-    [wait=0.5]do Music.switch("Nice Day")
+    [wait=0.25]
+    do Mwusic.switch("Nice Day")
     Clay: Well... That’s not helpful.
     set DialogueVars.talked_to_clover = true
     => clover
@@ -67,9 +74,9 @@ do Music.switch("Nice Day")
     Clay: By the way...
     Clay: When was this?
     Howard: Well...
-    Howard: Yesterday I went over to the city to get a bounty placed.
+    Howard: Two days ago I went over to the city to get a bounty placed.
     Howard: So, it would’ve been the night before.
-    Clay: Two nights ago, then?
+    Clay: Three days ago, then?
     Howard: That is correct.
     set DialogueVars.talked_to_howard1 = true
     => howard
@@ -88,7 +95,8 @@ do Music.switch("Nice Day")
     Clay: Before you say anythin’ else, just know that there’s no way I will ever want to talk to that spoiled egg.
     do Music.switch("Secret Jingle")
     Howard: Th-the point is that he works here.
-    [wait=0.5]do Music.switch("Nice Day")
+    [wait=0.25]
+    do Music.switch("Nice Day")
     Clay: Seb... [wait=1] has a job?
     Howard: Yes...?
     Clay: Well damn, didn’t think Sebby would ever do somethin’ actually useful.
@@ -103,7 +111,7 @@ do Music.switch("Nice Day")
     Clay: I am investigating. A CRIME.
     Clay: That doesn’t matter.
     Howard: She’s just busy is all.
-    Howard: I watch her when she has too much on her plate to make dinner.
+    Howard: I watch Apple when Joyce has too much on her plate to make dinner.
     Howard: It’s not exactly responsible to leave a child without food.
     Clay: Fine. Fine.
     set DialogueVars.talked_to_howard3 = true 
@@ -115,27 +123,29 @@ do Music.switch("Nice Day")
     Clay: Another step on the fetch quest...
     set DialogueVars.talked_to_howard4 = true
     => howard
-- Do you know where Clover got it from? [if DialogueVars.talked_to_howard4]
+- Do you know where he got it from? [if DialogueVars.talked_to_howard4 ]
     if DialogueVars.talked_to_clover == true
-        Howard: No?
-        Clay: Clover says it was Ryan?
-        Howard: Oh.[wait=0.5] Joyce’s ex-husband.[wait=0.5] Strange fella.
+        Howard: No...?
+        Clay: Clover says it was “a strange young man with reddish hair”?
+        Howard: Oh.[wait=0.25] Ryan.[wait=0.5] Strange fella.
         Clay: ...
         Howard: I never did like the guy, but he wa-[next=auto]
         Clay: Maybe you couldn’t tell by my silence, but I don’t know him.
         Howard: ...
-        Clay: Well?
+        Clay: Well? 
+        Howard: He’s Joyce’s ex-husband.
+        Howard: I would’ve thought you knew him.
         do Music.switch("Secret Jingle")
-        Howard: I would’ve thought you knew him. That’s more Joyce’s story to tell, though.
-        [wait=0.5]do Music.switch("Nice Day")
+        That’s more Joyce’s story to tell, though.
+        [wait=0.25]
+        do Music.switch("Nice Day")
         Clay: I guess I have to ask her?
         Howard: That’d be my suggestion.  
         set DialogueVars.talked_to_howard5 = true 
         => howard
     else
-        Howard: No?
-        Clay: Okay then...
-        Clay: I guess I’ll ask him.
+        Howard: No...?
+        Clay: I guess I’ll check in with him.
         => howard
 - Never mind.
 => END
@@ -149,7 +159,19 @@ do Music.switch("Nice Day")
     Joyce: I don’t exactly have time for small talk.
     Clay: Got it.
     => joyce
-- Where were you two nights ago? [if DialogueVars.talked_to_howard1]
+- How’s the work on the grove going?
+    Joyce: It’s work.[wait=0.25] Nothing special.
+    Joyce: The trees are healthy and there’s more yield this year.
+    Clay: That’s good to hear!
+    => joyce
+- Why is Apple fenced in? [if DialogueVars.applewhere]
+    Joyce: She just climbed in there...
+    Clay: ...
+    Joyce: I don’t know what you want me to do here.
+    Joyce: She’s just going to climb back in.
+    Clay: I guess so.
+    => joyce
+- Where were you three nights ago? [if DialogueVars.talked_to_howard1]
     Joyce: I was at home making dinner for myself and Apple.
     Clay: That’s nice!
     Joyce: I try to make good use of ingredients.
@@ -230,17 +252,23 @@ do Music.switch("Nice Day")
         set DialogueVars.applehow = true
     => apple
 - Where is your mom?
-    Apple points to the front of the house
+    Apple points to the front of the house.
     Clay: Figures...
     => apple
-- Where were you two nights ago? [if DialogueVars.talked_to_howard1]
+- Why are you in a fence?
+    Apple shrugs.
+    Clay: I don’t know why I asked you.
+    set DialogueVars.applewhere = true
+    => apple
+- Where were you three nights ago? [if DialogueVars.talked_to_howard1]
     Apple: ...
     Clay: You are determined not to be helpful, huh?
-    Apple points at the bank
+    Apple points at the bank.
     Clay: …
     do Music.switch("Secret Jingle")
     Clay: Oh.
     Clay: You were being babysat by Howard again…
+    [wait=0.25]
     do Music.switch("Nice Day")
     Clay: No one tells me anything.
     set DialogueVars.talked_to_apple = true
@@ -250,10 +278,17 @@ do Music.switch("Nice Day")
 
 ~ seb
 - How are you?
-    Seb: Well, if you MUST ask, I was on my way home from the checking on the railroad progress.
-    Clay: Well, Seb
+    Seb: Well, if you MUST ask, I’m about to head home from the checking on the railroad progress.
+    Clay: Well, Seb-
     Seb: [speed=1.5] please stop calling me that [next=auto]
     Clay: [speed=1.0] I’m glad that you’re keeping yourself busy.
+    set DialogueVars.talked_to_sebastian = true
+    => seb
+- Shouldn’t you get used to that name? [if DialogueVars.talked_to_sebastian]
+    Seb: Why would I ever do that?
+    Clay: Because I might start calling you Sebby.
+    Seb: ...
+    Seb: Why are you like this?
     => seb
 - How was work? [if DialogueVars.talked_to_howard2]
     Seb: ...
@@ -271,7 +306,7 @@ do Music.switch("Nice Day")
     Clay: You took a picture.
     Seb: Yes...?
     Clay: And didn’t TELL ME?!?
-    Seb: sorry [next=auto]
+    Seb: sorr-[next=auto]
     Clay: Just show me the picture.
     Seb: Here it is.
     Clay: ...
@@ -285,6 +320,7 @@ do Music.switch("Nice Day")
     do Music.switch("Secret Jingle")
     Clay: Wait.
     Clay: There’s a gold ring in their hand.
+    [wait=0.25]
     do Music.switch("Nice Day")
     Seb: What?
     Clay: Well. It seems you were actually helpful.
@@ -302,8 +338,19 @@ do Music.switch("Nice Day")
     Clay: You realize you’re just about the only person in this town that could call ME little, right?
     Teddy: Yes, but I feel I should exercise that right.
     Clay: Fine...
+    set DialogueVars.Teddyhobby = true
     => teddy
-- Where were you two nights ago? [if DialogueVars.talked_to_howard1] 
+- Any new hobbies? [if DialogueVars.Teddyhobby]
+    Teddy: Why do you ask?
+    Clay: You usually have somethin’ new you’re working on.
+    Clay: Figured I’d get ahead and ask now.
+    Teddy: Are you sure? [wait=0.25] I tend to blabber on.
+    - Yes
+        ***Impassioned speech here***
+    - No
+        => teddy
+    
+- Where were you three nights ago? [if DialogueVars.talked_to_howard1] 
     Teddy: Likely asleep by the fire.
     Clay: ...
     Teddy: I do that a lot.
@@ -332,7 +379,15 @@ do Music.switch("Nice Day")
     Harper: Go away.
     Clay: Got it.
     => harper
-- Where were you two nights ago? [if DialogueVars.talked_to_howard1] 
+- Any new projects?
+    if DialogueVars.Harper == true
+        Harper: ...
+        Harper: Fine.
+        
+    else
+        Harper: I said go away.
+        Clay: Got it.
+- Where were you three nights ago? [if DialogueVars.talked_to_howard1] 
     Harper: I was out shooting. What of it?
     Clay: I’m just curious.
     Harper: Well, fix that.
@@ -349,11 +404,11 @@ do Music.switch("Nice Day")
     Harper: I was at the range for a bit two nights ago.
     Harper: I’ve been testing out some ideas for cartridge primers.
     Harper: I think I’m on the verge of making something replicable.
-    Clay: ...
     Clay: That’s amazing!
     Harper: ...
     Clay: Look... I’m happy for you.
     Harper: Thanks...
+    set DialogueVars.Harper = true
     => harper
 - Never mind.
 => END

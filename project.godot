@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Rootin' Tootin' Shootin' Star"
-run/main_scene="uid://qpogo6q4hisj"
+run/main_scene="uid://b0sve3dd4bl16"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 

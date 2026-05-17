@@ -60,7 +60,7 @@ offset_bottom = 23.0
 [node name="LevelBlockout" parent="." unique_id=260174771 instance=ExtResource("1_7lnir")]
 
 [node name="Apple" parent="." unique_id=1558674200 instance=ExtResource("4_vkbyq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 0, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.9, 0, -8.5)
 
 [node name="Joyce" parent="." unique_id=1365650101 instance=ExtResource("5_ktfr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -10)
