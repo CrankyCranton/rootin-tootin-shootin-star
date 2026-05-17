@@ -52,7 +52,7 @@ do Music.switch("Nice Day")
     do Music.switch("Secret Jingle")
     Clover: As far as I remember, it was strange young man with reddish hair.
     [wait=0.25]
-    do Mwusic.switch("Nice Day")
+    do Music.switch("Nice Day")
     Clay: Well... That’s not helpful.
     set DialogueVars.talked_to_clover = true
     => clover
@@ -234,7 +234,7 @@ do Music.switch("Nice Day")
     Joyce: ...
     Joyce: I really did go through all that effort for nothing.
     Clay: Yup.
-    do DialogueVars.end_game("Ending Title", "Ending 1/1", Color.GRAY)
+    do DialogueVars.end_game("Justice", "Ending 1/1", Color.GRAY)
 - Never mind.
 => END
 
@@ -346,7 +346,21 @@ do Music.switch("Nice Day")
     Clay: Figured I’d get ahead and ask now.
     Teddy: Are you sure? [wait=0.25] I tend to blabber on.
     - Yes
-        ***Impassioned speech here***
+        Teddy: Well, recently I’ve been teaching Apple to read.
+        Teddy: She’s been doing good despite not being willing to TALK.
+        Teddy: You’d think she’d have more of a problem...
+        Teddy: ...differentiating words.[wait=0.5] But, she doesn’t.
+        Teddy: I had to teach her what the different letters are.
+        Teddy: What they look like and sound like.
+        Teddy: I’ve been trying to get her to talk more, but...
+        Teddy: Let’s just say it hasn’t gone well.
+        Teddy: The closest I got was having her sound out letters.
+        Teddy: Even then it sounded like someone was strangling a cat!
+        Teddy: Ain’t much to do for it.
+        Teddy: I just hope she’ll be able to eventually.
+        Teddy: I don’t want her to have to go through life like this.
+        Teddy: But I digress. Satisfied?
+        Clay: Sure...
     - No
         => teddy
     
@@ -379,14 +393,6 @@ do Music.switch("Nice Day")
     Harper: Go away.
     Clay: Got it.
     => harper
-- Any new projects?
-    if DialogueVars.Harper == true
-        Harper: ...
-        Harper: Fine.
-        
-    else
-        Harper: I said go away.
-        Clay: Got it.
 - Where were you three nights ago? [if DialogueVars.talked_to_howard1] 
     Harper: I was out shooting. What of it?
     Clay: I’m just curious.
@@ -410,6 +416,19 @@ do Music.switch("Nice Day")
     Harper: Thanks...
     set DialogueVars.Harper = true
     => harper
+- Any new projects?
+     if DialogueVars.Harper == true
+         Harper: ...
+         Harper: Fine.
+         Harper: I’ve been taking a break from gunsmithing.
+         Clay: Wha-[next=auto]
+         Harper: NO![wait=0.5] I mean that I am taking a break to rest.
+         Harper: I’m fixing my dad’s old pocketwatch. It could use some care.
+         Clay: I’m glad to know you’re finally taking a break.
+         Harper: SO YOU WERE TRYING TO CHECK UP ON ME!!!
+     else
+         Harper: I said go away.
+         Clay: Got it.
 - Never mind.
 => END
 

@@ -54,6 +54,7 @@ environment = SubResource("Environment_vkbyq")
 transform = Transform3D(0.92730147, 0, 0.3743153, 0, 1, 0, -0.3743153, 0, 0.92730147, 8.286526, 0, 25.286963)
 
 [node name="FPS" type="Label" parent="." unique_id=1725575134]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 
