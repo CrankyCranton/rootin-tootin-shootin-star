@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dercheor71vqm"]
 
-[ext_resource type="Texture2D" uid="uid://b1sbg08dr12lk" path="res://addons/kenney_prototype_textures/orange/texture_10.png" id="1_fctdh"]
 [ext_resource type="PackedScene" uid="uid://dfp7kf5hsh1l0" path="res://level/clover's_house.tscn" id="4_abgkm"]
 [ext_resource type="PackedScene" uid="uid://crpsijovt103u" path="res://level/bank.tscn" id="4_w12ce"]
 [ext_resource type="PackedScene" uid="uid://dxuosw264syu" path="res://level/railway_station.tscn" id="8_fctdh"]
@@ -9,25 +8,32 @@
 [ext_resource type="PackedScene" uid="uid://bibryk8joot2x" path="res://level/gun_shop.tscn" id="8_yekuo"]
 [ext_resource type="PackedScene" uid="uid://b57xcruvi1hfc" path="res://level/sign.tscn" id="11_yekuo"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yekuo"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abgkm"]
 diffuse_mode = 3
-albedo_texture = ExtResource("1_fctdh")
+specular_mode = 1
+albedo_color = Color(0.8156727, 0.60717034, 0.38101494, 1)
 roughness = 0.0
-uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fctdh"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.56, 0.40133336, 0.28, 1)
+roughness = 0.0
 
 [node name="LevelBlockout" type="CSGCombiner3D" unique_id=260174771]
-material_override = SubResource("StandardMaterial3D_yekuo")
 use_collision = true
 
 [node name="Ground" type="CSGBox3D" parent="." unique_id=1930178041]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(1000, 1, 1000)
+material = SubResource("StandardMaterial3D_abgkm")
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1427959906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0.5, -8)
 radius = 0.4
 height = 1.0
 sides = 16
+material = SubResource("StandardMaterial3D_fctdh")
 
 [node name="Bank" parent="." unique_id=2012993536 instance=ExtResource("4_w12ce")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0, -1.5)

@@ -2,9 +2,70 @@
 
 [ext_resource type="Texture2D" uid="uid://d3xvk1xekcuxj" path="res://addons/kenney_prototype_textures/orange/texture_09.png" id="1_f1pns"]
 [ext_resource type="PackedScene" uid="uid://buev014vgxtqf" path="res://level/door_knob.tscn" id="2_0xysl"]
+[ext_resource type="FontFile" uid="uid://b0mncb7gmbe0v" path="res://assets/Smokum/Smokum-Regular.ttf" id="3_0xysl"]
+[ext_resource type="PackedScene" uid="uid://ccpdcoxgn3auo" path="res://characters/interactable.tscn" id="4_jaydo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5gsn"]
 albedo_texture = ExtResource("1_f1pns")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2i8m6"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.46, 0.32966667, 0.23, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rp4o5"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.63, 0.47166, 0.30240002, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3mdpt"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.46, 0.32966667, 0.23, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72e0w"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.960356, 0.6890656, 0.1391251, 1)
+metallic = 0.05
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jaydo"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.27, 0.27, 0.27, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hog8j"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.27, 0.27, 0.27, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0frxu"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.27, 0.27, 0.27, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m87rn"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.46, 0.32966667, 0.23, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_073pg"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.46, 0.32966667, 0.23, 1)
+roughness = 0.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hog8j"]
+height = 2.3000002
+radius = 0.65000004
 
 [node name="GunShop" type="CSGCombiner3D" unique_id=2028630542]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -13,15 +74,18 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5493317, 1.5, 1.5500002)
 material_override = SubResource("StandardMaterial3D_i5gsn")
 size = Vector3(6.8, 3, 6.4)
+material = SubResource("StandardMaterial3D_2i8m6")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1805807812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5493317, 2, -1.6999998)
 material_override = SubResource("StandardMaterial3D_i5gsn")
 size = Vector3(7, 4, 0.1)
+material = SubResource("StandardMaterial3D_rp4o5")
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="." unique_id=2019544126]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -4.5061874, 1.25, -1.7688122)
 size = Vector3(0.05, 2.5, 1.5)
+material = SubResource("StandardMaterial3D_3mdpt")
 
 [node name="CSGCombiner3D12" type="CSGCombiner3D" parent="." unique_id=14481403]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -4.7561874, -2.5, -1.2438107)
@@ -30,34 +94,62 @@ operation = 2
 [node name="CSGBox3D7" type="CSGBox3D" parent="CSGCombiner3D12" unique_id=715335804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50000095, 3.6635256, 0.25)
 size = Vector3(0.2, 2.2729492, 1.2)
+material = SubResource("StandardMaterial3D_3mdpt")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="CSGCombiner3D12" unique_id=1700421906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45000172, 3.6690125, 0.25)
 operation = 2
 size = Vector3(0.1, 2.238025, 1.17)
+material = SubResource("StandardMaterial3D_3mdpt")
 
 [node name="DoorKnob2" parent="." unique_id=2053821029 instance=ExtResource("2_0xysl")]
 transform = Transform3D(1.910686e-15, -4.3711395e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.3711395e-08, -4.9561863, 1.25, -1.7935619)
+material = SubResource("StandardMaterial3D_72e0w")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=1075525351]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -4.5061874, 1.5999999, -1.7438126)
 operation = 2
 size = Vector3(0.1, 1, 0.7)
+material = SubResource("StandardMaterial3D_jaydo")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=1578539788]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -2.3561878, 1.3499999, -1.7438126)
 operation = 2
 size = Vector3(0.1, 1.5, 2)
+material = SubResource("StandardMaterial3D_hog8j")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1735832430]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -6.606188, 1.3499999, -1.743813)
 operation = 2
 size = Vector3(0.1, 1.5, 2)
+material = SubResource("StandardMaterial3D_0frxu")
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="." unique_id=235569442]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -6.606188, 0.57499987, -1.7938137)
 size = Vector3(0.1, 0.05, 2.1000001)
+material = SubResource("StandardMaterial3D_m87rn")
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="." unique_id=766459782]
 transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711395e-08, -2.3561878, 0.57499987, -1.7938137)
 size = Vector3(0.1, 0.05, 2.1000001)
+material = SubResource("StandardMaterial3D_073pg")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1485950888]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -4.55, 3.3, -1.7999996)
+shaded = true
+text = "Guns"
+font = ExtResource("3_0xysl")
+font_size = 256
+outline_size = 64
+
+[node name="Door" parent="." unique_id=1558674200 instance=ExtResource("4_jaydo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, -1.4999998)
+dialogue_title = "gun_shop_door"
+
+[node name="CollisionShape3D" parent="Door" index="0" unique_id=223759530]
+shape = SubResource("CylinderShape3D_hog8j")
+
+[node name="CollisionShape3D" parent="Door/StaticBody3D" parent_id_path=PackedInt32Array(1558674200, 464949223) index="0" unique_id=2024731061]
+disabled = true
+
+[editable path="Door"]

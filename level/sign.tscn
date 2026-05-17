@@ -1,16 +1,55 @@
 [gd_scene format=3 uid="uid://b57xcruvi1hfc"]
 
+[ext_resource type="FontFile" uid="uid://b0mncb7gmbe0v" path="res://assets/Smokum/Smokum-Regular.ttf" id="1_4cmms"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4cmms"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.46, 0.32966667, 0.23, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hfrol"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.46, 0.32966667, 0.23, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjup3"]
+diffuse_mode = 3
+specular_mode = 1
+albedo_color = Color(0.6315303, 0.4256397, 0.20362692, 1)
+roughness = 0.0
+
 [node name="Sign" type="CSGCombiner3D" unique_id=575721772]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2016799580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, 0)
 size = Vector3(0.25, 4, 0.25)
+material = SubResource("StandardMaterial3D_4cmms")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=1127133734]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 2, 0)
 size = Vector3(0.25, 4, 0.25)
+material = SubResource("StandardMaterial3D_hfrol")
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="." unique_id=694940906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0.05000019)
 polygon = PackedVector2Array(-2.4, 0, -2.4, 1, -2.3, 1.1, -2.15, 1.1, -1.9, 1, -1.7, 1, -1.5, 1.0500001, -1, 1.3000001, -0.5, 1.45, 0, 1.5, 0.5, 1.45, 1, 1.3000001, 1.5, 1.0500001, 1.7, 1, 1.9, 1, 2.15, 1.1, 2.3, 1.1, 2.4, 1, 2.4, 0)
 depth = 0.1
+material = SubResource("StandardMaterial3D_qjup3")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=402645314]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -0.049999952, 3.1000001, 0.10000029)
+shaded = true
+text = "Deadwood"
+font = ExtResource("1_4cmms")
+font_size = 192
+outline_size = 32
+
+[node name="Label3D2" type="Label3D" parent="." unique_id=488695787]
+transform = Transform3D(-1, 0, -8.7422784e-08, 0, 1, 0, 8.7422784e-08, 0, -1, -0.049999952, 3.1000001, -0.09999971)
+shaded = true
+text = "Deadwood"
+font = ExtResource("1_4cmms")
+font_size = 192
+outline_size = 32

@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -10)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -4)
 
 [node name="Seb" parent="." unique_id=1287747161 instance=ExtResource("7_ivpvi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.639132, 0.5, 12.077428)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.744762, 0.5, 12.077428)
 
 [node name="Clover" parent="." unique_id=197670578 instance=ExtResource("8_0v1st")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.457262, 0.05000024, 9.698909)

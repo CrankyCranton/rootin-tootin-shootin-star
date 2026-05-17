@@ -40,4 +40,5 @@ Vector2i(-1, -1): {
 
 [node name="Music" type="AudioStreamPlayer" unique_id=334673235]
 stream = SubResource("AudioStreamInteractive_eh16a")
+autoplay = true
 script = ExtResource("5_khlsn")
