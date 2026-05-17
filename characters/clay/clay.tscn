@@ -6,6 +6,7 @@
 radius = 0.2
 
 [node name="Clay" type="CharacterBody3D" unique_id=1651641501]
+floor_block_on_wall = false
 script = ExtResource("1_okicw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1032106443]

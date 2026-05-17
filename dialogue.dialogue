@@ -22,7 +22,8 @@ do Music.switch("Nice Day")
     Clay: Still selling random junk?
     Clover: HEY.
     Clover: It IS NOT random.
-    Clay:
+    Clay: Isn’t it? In what way is it NOT random?
+    Clover: ...
     # Using => to manually return to the top of the dialogue is messy because of how redundant it is, but it’ll work.  
     => clover
 - Where were you two nights ago? [if DialogueVars.talked_to_howard1]
@@ -54,6 +55,9 @@ do Music.switch("Nice Day")
 ~ howard
 - How are you?
     Howard: Good, business has been decent recently.
+    Clay: Even with the theft.
+    Howard: Honestly, even better. Insurance paid out quite a bit for that thing.
+    Clay: ...
     => howard
 - Where were you during the break-in?
     Howard: I was in my room.
@@ -99,7 +103,7 @@ do Music.switch("Nice Day")
     Clay: I am investigating. A CRIME.
     Clay: That doesn’t matter.
     => howard
-- It was a gold ring. [if DialogueVars.talked_to_seb]
+- Was it a gold ring? [if DialogueVars.talked_to_seb]
     Howard: YES! That’s what it was!
     Clay: Do you remember anything about it?
     Howard: I remember it was sold to me a while back by Ryan.
@@ -108,6 +112,12 @@ do Music.switch("Nice Day")
     Clay: Maybe you couldn’t tell by my silence, but I don’t know him.
     Howard: ...
     Clay: Well?
+    do Music.switch("Secret Jingle")
+    Howard: I would’ve thought you’d know him. That’s more Joyce’s story to tell, though.
+    do Music.switch("Nice Day")
+    Clay: I guess I have to ask her?
+    Howard: That’d be my suggestion.  
+    set DialogueVars.talked_to_howard3 = true 
     => howard
 - Never mind.
 => END
@@ -122,19 +132,38 @@ do Music.switch("Nice Day")
     Clay: Got it.
     => joyce
 - Where were you two nights ago? [if DialogueVars.talked_to_howard1]
-    
+    Joyce: I was at home making dinner for myself and Apple.
+    Clay: 
     => joyce
- - Never mind.
+- Who was Ryan? [if DialogueVars.talked_to_howard3]
+    Joyce: First of all...
+    Joyce: How did you hear that name?
+    Clay: Howard let it slip.
+    Joyce: Ugh...
+    Joyce: He always runs his mouth.
+    Joyce: ...
+    Joyce: Ryan was my husband. Roughly two years ago he left.
+    Joyce: I know you left for a while, so you weren’t here when he was.
+    Joyce: Honestly, I really wish you had been there.
+    Joyce: I needed the help.
+    Joyce: But I’m here now.
+    Clay: ...
+    => joyce
+- Never mind.
 => END
 
 ~ apple
 - How are you?
-    Apple: ...
-    Apple: ...
-    Apple: ...
-    Clay: Are you going to say anything, or...?
-    Apple: ...
-    Clay: Nice talk.
+    if DialogueVars.applehow
+        Clay: I’m not bothering with that again.  
+    else
+        Apple: ...
+        Apple: ...
+        Apple: ...
+        Clay: Are you going to say anything, or...?
+        Apple: ...
+        Clay: Nice talk.
+        set DialogueVars.applehow = true
     => apple
 - Where is your mom?
     Apple points to the front of the house
@@ -243,11 +272,27 @@ do Music.switch("Nice Day")
     Harper: I was out shooting. What of it?
     Clay: I’m just curious.
     Harper: Well, fix that.
+    Clay: Look... I need to know this.
+    Harper: What? Are you going to ***Something***?
+    Clay: I am just trying to verify where you were a couple nights ago. 
+    Clay: As long as you have an alibi, I can cross you off the investigation.
+    Harper: ...
+    Harper: What investigation?
+    Clay: Dang...
+    Clay: There was a theft at the bank.
+    Harper: I was at the range for a bit two nights ago.
+    Harper: I’ve been testing out some ideas for cartridge primers.
+    Harper: I think I’m on the verge of making something replicable.
+    Clay: ...
+    Clay: That’s amazing!
+    Harper: ...
+    Clay: Look... I’m happy for you.
+    Harper: Thanks...
     => harper
 - Never mind.
 => END
 
-# Remove this if yah want
+# Remove/change this if yah want
 ~ gun_shop_door
 I’m the sheriff of this town, but the game won’t even let me shoot a gun, dagnabbit!
 => END

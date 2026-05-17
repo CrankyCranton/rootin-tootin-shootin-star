@@ -24,6 +24,12 @@ sky = SubResource("Sky_qohg2")
 tonemap_mode = 2
 ssao_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cw150"]
+size = Vector3(2.1000001, 1.8000001, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xii2b"]
+size = Vector3(2.47937, 1, 13.3)
+
 [node name="Level" type="Node3D" unique_id=186788294]
 script = ExtResource("1_qohg2")
 
@@ -64,3 +70,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.064358, 0.5, 14.790253)
 
 [node name="Harper" parent="." unique_id=1927619638 instance=ExtResource("10_cw150")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1053295, 9.536743e-07, 19.581627)
+
+[node name="Ramps" type="StaticBody3D" parent="." unique_id=2030153611]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramps" unique_id=1568386820]
+transform = Transform3D(0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0, 1, -5.5024285, -0.30312765, -1.5)
+shape = SubResource("BoxShape3D_cw150")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Ramps" unique_id=1441060706]
+transform = Transform3D(0.7071067, -0.70710677, 0, 0.70710677, 0.7071067, 0, 0, 0, 1, 10.961844, -0.7546953, 13.75)
+shape = SubResource("BoxShape3D_xii2b")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Ramps" unique_id=1008260675]
+transform = Transform3D(0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 0, 0, 1, 21.52272, -0.7546953, 13.75)
+shape = SubResource("BoxShape3D_xii2b")
