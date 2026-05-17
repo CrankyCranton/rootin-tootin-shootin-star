@@ -175,7 +175,7 @@ do Music.switch("Nice Day")
     Joyce: I was at home making dinner for myself and Apple.
     Clay: That’s nice!
     Joyce: I try to make good use of ingredients.
-    set DialogueVars.talked_to_joyce1 == true
+    set DialogueVars.talked_to_joyce1 = true
     => joyce
 - Who was Ryan? [if DialogueVars.talked_to_howard5]
     Joyce: First of all...
