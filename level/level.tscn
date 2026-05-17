@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b5julik07vjcx" path="res://characters/teddy.tscn" id="9_6gtgk"]
 [ext_resource type="PackedScene" uid="uid://drvcqn7ve40x2" path="res://characters/harper.tscn" id="10_cw150"]
 [ext_resource type="VideoStream" uid="uid://bjnwmdpc5ro3l" path="res://assets/art/ending_2_animation.ogv" id="11_xii2b"]
+[ext_resource type="Script" uid="uid://seaqsl5bwpo5" path="res://level/pause_menu.gd" id="12_l5lfc"]
+[ext_resource type="FontFile" uid="uid://b0mncb7gmbe0v" path="res://assets/Smokum/Smokum-Regular.ttf" id="12_rhqlf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5gx2l"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -30,6 +32,12 @@ size = Vector3(2.1000001, 1.8000001, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xii2b"]
 size = Vector3(2.47937, 1, 13.3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5lfc"]
+font = ExtResource("12_rhqlf")
+font_size = 64
+outline_size = 32
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Level" type="Node3D" unique_id=186788294]
 script = ExtResource("1_qohg2")
@@ -52,7 +60,7 @@ offset_bottom = 23.0
 [node name="LevelBlockout" parent="." unique_id=260174771 instance=ExtResource("1_7lnir")]
 
 [node name="Apple" parent="." unique_id=1558674200 instance=ExtResource("4_vkbyq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3, 0, -7)
 
 [node name="Joyce" parent="." unique_id=1365650101 instance=ExtResource("5_ktfr2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -10)
@@ -106,3 +114,67 @@ unique_name_in_owner = true
 layout_mode = 2
 stream = ExtResource("11_xii2b")
 expand = true
+
+[node name="PauseMenu" type="CanvasLayer" parent="." unique_id=1542277340]
+process_mode = 3
+layer = 101
+visible = false
+script = ExtResource("12_l5lfc")
+
+[node name="Background" type="ColorRect" parent="PauseMenu" unique_id=1705530833]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5, 0.5, 0.5, 0.7529412)
+
+[node name="Label" type="Label" parent="PauseMenu" unique_id=478642143]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -504.5
+offset_top = 32.0
+offset_right = -231.5
+offset_bottom = 111.0
+grow_horizontal = 2
+rotation = -0.14415687
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "Game Paused"
+label_settings = SubResource("LabelSettings_l5lfc")
+
+[node name="QuitButton" type="Button" parent="PauseMenu" unique_id=1997089697]
+offset_left = 997.99994
+offset_top = 544.0
+offset_right = 1070.0
+offset_bottom = 611.0
+rotation = -0.2617994
+focus_mode = 0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("12_rhqlf")
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+flat = true
+
+[node name="ContinueButton" type="Button" parent="PauseMenu" unique_id=1521697796]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = 88.0
+offset_right = -134.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.08726646
+focus_mode = 0
+theme_override_constants/outline_size = 16
+theme_override_fonts/font = ExtResource("12_rhqlf")
+theme_override_font_sizes/font_size = 48
+text = "Continue"
+flat = true
+
+[connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseMenu/ContinueButton" to="." method="_on_continue_button_pressed"]

@@ -10,6 +10,7 @@ var game_ended := false
 @onready var clay: Clay = $Clay
 @onready var fade: ColorRect = $Fade
 @onready var ending_2_animation: VideoStreamPlayer = %Ending2Animation
+@onready var pause_menu: CanvasLayer = $PauseMenu
 
 
 func _ready() -> void:
@@ -20,8 +21,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	fade.color.a = (maxf(0.0, clay.position.length() - FADE_START_DISTANCE)
 			/ (LEAVE_DISTANCE - FADE_START_DISTANCE))
-	fps.text = str(Performance.get_monitor(Performance.TIME_FPS)) \
-			+ "\n" + str(clay.global_transform)
+	fps.text = "FPS: " + str(Performance.get_monitor(Performance.TIME_FPS))# \
+			#+ "\n" + str(clay.global_transform)
 
 	if clay.position.length() >= LEAVE_DISTANCE and not game_ended:
 		game_ended = true
@@ -39,3 +40,13 @@ func _on_dialogue_vars_game_ended(title_text: String, subtitle_text: String, col
 	end_screen.init(title_text, subtitle_text, color)
 	await get_tree().process_frame
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_continue_button_pressed() -> void:
+	pause_menu.visible = false
+	get_tree().paused = false
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE if clay.talking else Input.MOUSE_MODE_CAPTURED

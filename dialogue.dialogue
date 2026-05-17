@@ -45,7 +45,7 @@ do Music.switch("Nice Day")
     Clover: What is with you today and asking me to remember things...?
     do Music.switch("Secret Jingle")
     Clover: As far as I remember, it was strange young man with reddish hair.
-    do Music.switch("Nice Day")
+    [wait=0.5]do Music.switch("Nice Day")
     Clay: Well... That’s not helpful.
     set DialogueVars.talked_to_clover = true
     => clover
@@ -88,7 +88,7 @@ do Music.switch("Nice Day")
     Clay: Before you say anythin’ else, just know that there’s no way I will ever want to talk to that spoiled egg.
     do Music.switch("Secret Jingle")
     Howard: Th-the point is that he works here.
-    do Music.switch("Nice Day")
+    [wait=0.5]do Music.switch("Nice Day")
     Clay: Seb... [wait=1] has a job?
     Howard: Yes...?
     Clay: Well damn, didn’t think Sebby would ever do somethin’ actually useful.
@@ -127,7 +127,7 @@ do Music.switch("Nice Day")
         Clay: Well?
         do Music.switch("Secret Jingle")
         Howard: I would’ve thought you knew him. That’s more Joyce’s story to tell, though.
-        do Music.switch("Nice Day")
+        [wait=0.5]do Music.switch("Nice Day")
         Clay: I guess I have to ask her?
         Howard: That’d be my suggestion.  
         set DialogueVars.talked_to_howard5 = true 
