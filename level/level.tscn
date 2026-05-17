@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddx01sovjx5ai" path="res://characters/clover.tscn" id="8_0v1st"]
 [ext_resource type="PackedScene" uid="uid://b5julik07vjcx" path="res://characters/teddy.tscn" id="9_6gtgk"]
 [ext_resource type="PackedScene" uid="uid://drvcqn7ve40x2" path="res://characters/harper.tscn" id="10_cw150"]
+[ext_resource type="VideoStream" uid="uid://bjnwmdpc5ro3l" path="res://assets/art/ending_2_animation.ogv" id="11_xii2b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5gx2l"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -92,3 +93,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=92316564]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Ending2Animation" type="VideoStreamPlayer" parent="AspectRatioContainer" unique_id=1184502253]
+unique_name_in_owner = true
+layout_mode = 2
+stream = ExtResource("11_xii2b")
+expand = true
